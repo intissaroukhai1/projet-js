@@ -1,7 +1,7 @@
 <?php
 include_once "../includes/config.php"; // Connexion DB (PDO)
 include_once "../includes/auth.php";   // Auth
- 
+//include_once "../assets/js/scriptP.js";
 // Récupérer toutes les propriétés avec PDO
 $stmt = $pdo->query("SELECT * FROM proprietes");
 $proprietes = $stmt->fetchAll(PDO::FETCH_ASSOC);
@@ -50,5 +50,7 @@ $proprietes = $stmt->fetchAll(PDO::FETCH_ASSOC);
             </tbody>
         </table>
     </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+<script src="scriptP.js"></script>
 </body>
 </html>

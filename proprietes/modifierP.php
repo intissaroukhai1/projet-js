@@ -1,6 +1,7 @@
 <?php
 include_once "../includes/config.php";
 include_once "../includes/auth.php";
+//include_once "../assets/js/scriptP.js";
 
 // Récupération de l'ID passé en GET
 $id = $_GET['id'];
@@ -53,5 +54,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
 </form>
 
     </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+<script src="scriptP.js"></script>
 </body>
 </html>

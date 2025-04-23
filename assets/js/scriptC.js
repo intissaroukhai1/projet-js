@@ -1,32 +1,32 @@
-// Fonction de confirmation avant suppression
+// Confirmation avant suppression d’un client
 function confirmerSuppression() {
-    return confirm("Es-tu sûr de vouloir supprimer cette propriété ?");
+    return confirm("Es-tu sûr de vouloir supprimer ce client ?");
 }
 
-// Affichage d'une alerte Bootstrap en fonction des paramètres de l'URL
+// Gestion des alertes dynamiques selon les paramètres URL
 window.addEventListener('DOMContentLoaded', () => {
     const params = new URLSearchParams(window.location.search);
     const container = document.querySelector('.container');
 
     if (params.get('deleted')) {
-        afficherAlerte("✅ Propriété supprimée avec succès !", "danger", container);
+        afficherAlerte("✅ Client supprimé avec succès !", "danger", container);
     } else if (params.get('success')) {
-        afficherAlerte("✅ Propriété ajoutée avec succès !", "success", container);
+        afficherAlerte("✅ Client ajouté avec succès !", "success", container);
     } else if (params.get('updated')) {
-        afficherAlerte("✅ Propriété modifiée avec succès !", "info", container);
+        afficherAlerte("✅ Client modifié avec succès !", "info", container);
     }
 });
 
-// Fonction utilitaire pour créer une alerte Bootstrap
+// Fonction pour afficher une alerte Bootstrap
 function afficherAlerte(message, type, container) {
     const alert = document.createElement("div");
     alert.className = `alert alert-${type} alert-dismissible fade show mt-3`;
     alert.role = "alert";
     alert.innerHTML = `
         ${message}
-        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Fermer"></button>
     `;
-    container.prepend(alert); // Ajoute l'alerte en haut de la page
+    container.prepend(alert); // Affiche l'alerte en haut du contenu
 }
 
 function ouvrirFormulaire() {

@@ -1,7 +1,7 @@
 <?php
 session_start();
 if (!isset($_SESSION['username'])) {
-    header("Location: login.php");
+    header("Location: index.php");
     exit();
 }
 ?>
@@ -25,7 +25,8 @@ if (!isset($_SESSION['username'])) {
                 <li><a href="clients/listeC.php"><i class="fas fa-users"></i> Clients</a></li>
                 <li><a href="transactions/listeT.php"><i class="fas fa-exchange-alt"></i> Transactions</a></li>
                 <li><a href="logout.php"><i class="fas fa-sign-out-alt"></i> Déconnexion</a></li>
-            </ul>
+                <!-- <a href="logout.php" class="btn btn-danger">Déconnexion</a> -->
+</ul>
         </aside>
 
         <!-- Main content -->
