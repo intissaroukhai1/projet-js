@@ -1,6 +1,6 @@
 <?php
 include_once "../includes/config.php"; // Connexion DB (PDO)
-include_once "../includes/auth.php";   // Authentification
+//include_once "../includes/auth.php";   // Authentification
 
 // Récupérer tous les clients
 $stmt = $pdo->query("SELECT * FROM clients");
