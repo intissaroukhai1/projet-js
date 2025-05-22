@@ -1,7 +1,7 @@
 <?php
 //require_once __DIR__ . '/../config.php'; // Connexion via PDO
-require_once 'config.php';
-$pdo = $GLOBALS['pdo'];
+require_once 'includes/config.php';
+//$pdo = $GLOBALS['pdo'];
 
 session_start();
 
@@ -31,7 +31,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         if ($result) {
             $_SESSION['username'] = $email;
             $_SESSION['role'] = 'client';
-            header("Location:dashboard.php");
+            header("Location: dashboard.php");
             exit();
         } else {
             $message = "❌ Une erreur est survenue lors de l'inscription.";

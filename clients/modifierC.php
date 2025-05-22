@@ -50,6 +50,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
             <input type="text" name="telephone" value="<?= htmlspecialchars($client['telephone']) ?>" required>
 
             <button type="submit">Enregistrer</button>
+            <button><a href="listeC.php" class="btn btn-secondary btn-cancel">Annuler</a></button>
         </form>
     </div>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>

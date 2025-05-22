@@ -1,106 +1,18 @@
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-  }
-  
-  body, html {
-    height: 100%;
-    font-family: Arial, sans-serif;
-  }
-  
-  body {
-    background: url('../images/background.jpg') no-repeat center center fixed;
-    background-size: cover;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
-  
-  .login-container {
-    background: rgba(114, 100, 100, 0.349); /* Plus opaque */
-    padding: 40px 30px;
-    border-radius: 15px;
-    box-shadow: 0 10px 25px rgba(0,0,0,0.3);
-    width: 100%;
-    max-width: 400px;
-    text-align: center;
-  }
-  
-  .login-container h2 {
-    margin-bottom: 25px;
-    color: #222;
-  }
-  
-  .input-icon {
-    display: flex;
-    align-items: center;
-    border: 1px solid #ccc;
-    border-radius: 8px;
-    margin: 10px auto;
-    padding: 0 10px;
-    width: 90%;
-    background-color: #fff;
-  }
-  
-  .input-icon .icon {
-    font-size: 18px;
-    margin-right: 8px;
-    color: #555;
-  }
-  
-  .input-icon input {
-    border: none;
-    outline: none;
-    width: 100%;
-    padding: 12px 0;
-    font-size: 16px;
-  }
-  
-  button {
-    background-color: #0d6efd;
-    color: white;
-    padding: 12px 20px;
-    border: none;
-    border-radius: 8px;
-    cursor: pointer;
-    width: 90%;
-    font-weight: bold;
-    margin-top: 15px;
-    transition: background-color 0.3s ease;
-  }
-  
-  button:hover {
-    background-color: #0b5ed7;
-  }
-  
-  .forgot-password {
-    margin-top: 15px;
-  }
-  
-  .forgot-password a {
-    color: #0d6efd;
-    text-decoration: none;
-    font-size: 14px;
-  }
-  
-  .forgot-password a:hover {
-    text-decoration: underline;
-  }
-  
-  .error {
-    color: red;
-    font-size: 14px;
-    margin-bottom: 10px;
-  }
-  .error-message {
-    background-color: #f8d7da;
-    color: #842029;
-    padding: 10px;
-    border-radius: 6px;
-    margin-bottom: 15px;
-    width: 90%;
-    margin-left: auto;
-    margin-right: auto;
-  }
-  
+body, html {
+  height: 100%;
+  font-family: Arial, sans-serif;
+}
+
+.bg-image {
+  background: url('../images/background.jpg') no-repeat center center fixed;
+  background-size: cover;
+}
+
+.login-container {
+  max-width: 400px;
+  width: 100%;
+}
+
+input::placeholder {
+  color: #888;
+}

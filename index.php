@@ -28,7 +28,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             if (password_verify($password, $user['password']) || $password === $user['password']) {
                 $_SESSION['username'] = $user['prenom']; // ou $user['email']
                 $_SESSION['role'] = 'client';
-                header("Location: dashboard.php");
+                $_SESSION['client_id'] = $user['id']; 
+                header("Location: dashboradCl.php");
                 exit();
             } else {
                 $message = "❌ Mot de passe incorrect.";
@@ -74,8 +75,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             </div>
             <button type="submit" class="btn btn-primary w-100">Se connecter</button>
             <div class="mt-3">
-                <a href="/includes/auth.php" class="text-decoration-none">➕ Créer un compte</a><br>
-                <a href="#" class="text-decoration-none">🔗 Mot de passe oublié ?</a>
+                <a href="auth.php" class="text-decoration-none">➕ Créer un compte</a><br>
+                <!-- <a href="#" class="text-decoration-none">🔗 Mot de passe oublié ?</a> -->
             </div>
         </form>
     </div>

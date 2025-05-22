@@ -1,7 +1,5 @@
 <?php
-include_once "../includes/config.php";
-include_once "../includes/auth.php";
-//include_once "../assets/js/scriptP.js";
+include_once __DIR__ . '/../includes/config.php';
 
 $message = "";
 
@@ -10,13 +8,12 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
     $titre = $_POST['titre'];
     $description = $_POST['description'];
     $adresse = $_POST['adresse'];
-    $prix = $_POST['prix'];
+    $prix_location = $_POST['prix_location'];
+    $prix_achat = $_POST['prix_achat'];
 
-    $stmt = $pdo->prepare("INSERT INTO proprietes (titre, description, adresse, prix) VALUES (?, ?, ?, ?)");
-    if ($stmt->execute([$titre, $description, $adresse, $prix])) {
-        // Redirection après ajout réussi
+    $stmt = $pdo->prepare("INSERT INTO proprietes (titre, description, adresse, prix_location, prix_achat) VALUES (?, ?, ?, ?, ?)");
+    if ($stmt->execute([$titre, $description, $adresse, $prix_location, $prix_achat])) {
         header("Location: listeP.php?success=1");
-        
         exit();
     } else {
         $message = "Erreur lors de l'ajout.";
@@ -43,7 +40,8 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
             <input type="text" name="titre" placeholder="Titre" required>
             <textarea name="description" placeholder="Description" required></textarea>
             <input type="text" name="adresse" placeholder="Adresse" required>
-            <input type="number" step="0.01" name="prix" placeholder="Prix (TND)" required>
+            <input type="number" step="0.01" name="prix_location" placeholder="Prix de location (TND)" required>
+            <input type="number" step="0.01" name="prix_achat" placeholder="Prix d'achat (TND)" required>
 
             <div class="form-actions">
                 <button type="submit">Ajouter</button>
@@ -52,6 +50,6 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
         </form>
     </div>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
-<script src="scriptP.js"></script>
+    <script src="scriptP.js"></script>
 </body>
 </html>

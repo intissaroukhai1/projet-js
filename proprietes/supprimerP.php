@@ -1,6 +1,6 @@
 <?php
 include_once "../includes/config.php";
-include_once "../includes/auth.php";
+//include_once "../includes/auth.php";
 //include_once "../assets/js/scriptP.js";
 
 if (isset($_GET['id'])) {
